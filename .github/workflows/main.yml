@@ -1,0 +1,56 @@
+name:Deploy Elmboot and Elmclient
+
+on:
+ push:
+  branches:
+   -main
+
+jobs:
+build:
+runs-on:ubuntu-latest
+
+steps:
+-name:Checkout repository
+
+
+# 安装 cnpm 并使用 cnpm 安装前端依赖
+-name:Install cnpm
+run:npm install -g cnpm --registry=https://registry.npmmirror.com
+
+-name:Install frontend dependencies
+run:|
+cd elmclient
+cnpm install
+
+
+# 构建前端项目
+-name:Build frontend project
+run:|
+cd elmclient
+npm run build
+
+# 将前端静态文件复制到后端项目的资源目录
+-name:Copy frontend static files to backend
+run:|
+mv elmclient/dist elmboot/src/main/resources/static
+
+
+
+# 重新打包后端项目
+-name:Rebuild backend project
+run:|
+cd elmboot
+mvn package
+
+# 部署到服务器（假设使用 SSH 部署）
+-name:Deploy to server
+uses:appleboy/ssh-action@master
+with:
+host:${{secrets.SSH_HOST}}
+username:${{secrets.SSH_USERNAME}}
+password:${{secrets.SSH_PASSWORD}}
+script:|
+cd /path/to/deploy
+mv elmboot-0.1-SNAPSHOT.jar elmboot-0.0.1-SNASSHOT.jar.old（旧）
+scp -o StrictHostKeyChecking=no -r runner@localhost:/home/runner/work/your-repo/your-repo/elmboot/target/elmboot-0.0.1-SNAPSHOT.jar .
+nohup java -jar elmboot-0.0.1-SNAPSHOT.jar > /dev/null 2>&1 &
