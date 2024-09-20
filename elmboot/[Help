@@ -1,0 +1,6 @@
+[INFO] Scanning for projects...
+Downloading from alimaven: http://maven.aliyun.com/nexus/content/groups/public/org/codehaus/mojo/build-helper-maven-plugin/3.1.0/build-helper-maven-plugin-3.1.0.pom
+Progress (1): 3.6/5.8 kBProgress (1): 5.8 kB                        Downloaded from alimaven: http://maven.aliyun.com/nexus/content/groups/public/org/codehaus/mojo/build-helper-maven-plugin/3.1.0/build-helper-maven-plugin-3.1.0.pom (5.8 kB at 3.7 kB/s)
+Downloading from alimaven: http://maven.aliyun.com/nexus/content/groups/public/org/codehaus/mojo/mojo-parent/50/mojo-parent-50.pom
+Progress (1): 3.6/34 kBProgress (1): 7.7/34 kBProgress (1): 12/34 kB Progress (1): 16/34 kBProgress (1): 20/34 kBProgress (1): 24/34 kBProgress (1): 28/34 kBProgress (1): 32/34 kBProgress (1): 34 kB                      Downloaded from alimaven: http://maven.aliyun.com/nexus/content/groups/public/org/codehaus/mojo/mojo-parent/50/mojo-parent-50.pom (34 kB at 107 kB/s)
+Downloading from alimaven: http://maven.aliyun.com/nexus/content/groups/public/org/codehaus/mojo/build-helper-maven-plugin/3.1.0/build-helper-maven-plugin-3.1.0.jar
