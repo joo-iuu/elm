@@ -1,9 +1,8 @@
 name:Deploy Elmboot and Elmclient
-
 on:
-push:
-branches:
--主要的
+ push:
+ branches:
+-main
 
 jobs:
 build:
