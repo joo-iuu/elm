@@ -2,7 +2,7 @@ name:Deploy Elmboot and Elmclient
 on:
  push:
   branches:
-   -elm
+   -main
 
 jobs:
 build:
